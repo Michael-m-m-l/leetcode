@@ -10,10 +10,29 @@ package com.michael.leetcode;
 
 */
 
+import org.junit.jupiter.api.Test;
+
 public class Solution02_03 {
     public void deleteNode(ListNode node) {
 
     }
+
+    public ListNode add(int x,ListNode start) {
+        ListNode node = new ListNode(x);
+        start.next = node;
+        return node;
+    }
+
+
+    public ListNode test(){
+        ListNode start = new ListNode(3);
+        ListNode node1 = add(4,start);
+        ListNode node2 = add(5,node1);
+        ListNode node3 = add(6,node2);
+        ListNode node4= add(7,node3);
+        return start;
+    }
+
 
 }
 
@@ -24,10 +43,4 @@ class ListNode {
     ListNode(int x) {
         val = x;
     }
-
-    ListNode(int x, ListNode next) {
-        this.val = x;
-        this.next = next;
-    }
-
 }
