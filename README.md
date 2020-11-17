@@ -1,2 +1,2 @@
 # leetcode
-this  is  leet code
+thi is leet code 
