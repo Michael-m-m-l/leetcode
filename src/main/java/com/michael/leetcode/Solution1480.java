@@ -24,8 +24,10 @@ package com.michael.leetcode;
  -10^6 <= nums[i] <= 10^6
 */
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+@Slf4j
 public class Solution1480 {
     public int[] runningSum(int[] nums) {
         int[] result = new int[nums.length];
@@ -41,6 +43,6 @@ public class Solution1480 {
     public void test(){
         int[] nums = {1,2,3,4};
         int[] ints = runningSum(nums);
-        System.out.println("");
+        log.info(ints+"");
     }
 }

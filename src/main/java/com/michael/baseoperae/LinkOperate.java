@@ -1,6 +1,7 @@
-package com.michael.leetcode;
+package com.michael.baseoperae;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 class LinkNode {
@@ -22,6 +23,7 @@ class LinkNode {
 }
 
 // 链表操作
+@Slf4j
 public class LinkOperate {
 
     // 链表头部添加节点
@@ -57,6 +59,6 @@ public class LinkOperate {
         start = addHeader(start);
         LinkNode linkNode = addFooter(start);
         start.next = linkNode;
-        System.out.println("");
+        log.info(""+start.val);
     }
 }
