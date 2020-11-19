@@ -15,32 +15,30 @@ import org.junit.jupiter.api.Test;
 public class Solution02_03 {
     public void deleteNode(ListNode node) {
 
+
     }
 
-    public ListNode add(int x,ListNode start) {
-        ListNode node = new ListNode(x);
-        start.next = node;
-        return node;
-    }
+    @Test
+    public void test(){
+        ListNode start = new ListNode(99);
+        start.val = -1;
+        for (int i = 0; i < 10; i++) {
+            ListNode next = new ListNode(i);
+            next.next = start;
+            start = next;
+        }
+
+        ListNode delete = new ListNode(1);
 
 
-    public ListNode test(){
-        ListNode start = new ListNode(3);
-        ListNode node1 = add(4,start);
-        ListNode node2 = add(5,node1);
-        ListNode node3 = add(6,node2);
-        ListNode node4= add(7,node3);
-        return start;
+
     }
 
 
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
+ class ListNode {
+      int val;
+      ListNode next;
+      ListNode(int x) { val = x; }
 }
