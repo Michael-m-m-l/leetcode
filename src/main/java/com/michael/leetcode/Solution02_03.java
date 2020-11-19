@@ -11,11 +11,11 @@ package com.michael.leetcode;
 */
 
 import org.junit.jupiter.api.Test;
-
+//思路  把我变成你  在杀了你   经典 经典
 public class Solution02_03 {
     public void deleteNode(ListNode node) {
-
-
+       node.val = node.next.val;
+       node.next = node.next.next;
     }
 
     @Test
@@ -28,9 +28,18 @@ public class Solution02_03 {
             start = next;
         }
 
-        ListNode delete = new ListNode(1);
+        ListNode current = start;
+        ListNode previous = start;
+        ListNode node = new ListNode(3);
 
+        while (current.val!=node.val){
+            previous = current;
+            current = current.next;
+        }
 
+        previous.next = current.next;
+
+        return;
 
     }
 
