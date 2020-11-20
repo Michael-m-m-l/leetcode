@@ -1,3 +1,4 @@
+
 package com.michael.link;
 
 
@@ -8,17 +9,8 @@ class LinkNode {
     int val;
     LinkNode next;
 
-    LinkNode() {
-
-    }
-
     LinkNode(int val) {
         this.val = val;
-    }
-
-    LinkNode(int val, LinkNode next) {
-        this.val = val;
-        this.next = next;
     }
 }
 
@@ -26,7 +18,12 @@ class LinkNode {
 @Slf4j
 public class LinkOperate {
 
-    // 链表头部添加节点
+    /**
+     * 链表头部添加节点
+     *
+     * @param start
+     * @return
+     */
     LinkNode addHeader(LinkNode start) {
         for (int i = 0; i < 10; i++) {
             LinkNode next = new LinkNode(i);
@@ -36,7 +33,13 @@ public class LinkOperate {
         return start;
     }
 
-    // 链表尾部添加节点 使用递归 但是会丢失头节点
+    /**
+     * 链表尾部添加节点
+     * 使用递归 但是会丢失头节点 需要返回后重新修改start 节点的引用
+     *
+     * @param link
+     * @return
+     */
     LinkNode addFooter(LinkNode link) {
         if (link.next != null) {
             link = link.next;
@@ -47,10 +50,37 @@ public class LinkOperate {
         return link;
     }
 
-    // 链表第n个节点处新增节点
-    LinkNode addMiddle(LinkNode link, int value, int index) {
+    /**
+     * 删除链表的中间节点
+     * 思路  我把我变成你 然后干掉你
+     *
+     * @param current
+     * @return
+     */
+    void deleteNodeNotEndAndFirst(LinkNode current) {
+        current.val = current.next.val;
+        current.next = current.next.next;
+    }
 
-        return link;
+    /**
+     * 删除链表中的任意node
+     * @param start
+     * @param delete
+     */
+    void deleteNode(LinkNode start, LinkNode delete) {
+        LinkNode current = start;
+        LinkNode provious = start;
+        while (current.val != delete.val) {
+            current = current.next;
+            provious = current;
+        }
+
+        if (current.val == start.val) {
+            start.val = start.next.val;
+            start.next = start.next.next;
+        } else {
+            provious.next = current.next;
+        }
     }
 
     @Test
@@ -59,6 +89,6 @@ public class LinkOperate {
         start = addHeader(start);
         LinkNode linkNode = addFooter(start);
         start.next = linkNode;
-        log.info(""+start.val);
+        log.info("" + start.val);
     }
 }

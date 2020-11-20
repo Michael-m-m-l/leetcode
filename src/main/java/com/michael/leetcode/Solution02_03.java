@@ -11,7 +11,10 @@ package com.michael.leetcode;
 */
 
 import org.junit.jupiter.api.Test;
-//思路  把我变成你  在杀了你   经典 经典
+/*思路
+传统 思路 需要知道 前置节点  来删除当前节点
+新思路 把我变成你  然后杀了你   经典 经典
+ */
 public class Solution02_03 {
     public void deleteNode(ListNode node) {
        node.val = node.next.val;
