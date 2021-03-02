@@ -1,4 +1,4 @@
-package com.michael.array;
+package com.michael.string_and_array;
 
 
 import lombok.extern.slf4j.Slf4j;
